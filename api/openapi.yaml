@@ -1,0 +1,657 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: it@agridence.com
+  description: Agridence
+  termsOfService: https://www.agridence.com/
+  title: Agridence API
+  version: v1
+servers:
+- url: "https://{environment}.heveaconnect.com/api/v1"
+  variables:
+    environment:
+      default: api-testing
+      enum:
+      - api-testing
+      - api-staging
+paths:
+  /auth/login/:
+    post:
+      description: Login to the Agridence API with email and password.
+      operationId: auth_login_create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MFAAuthToken'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MFAAuthToken'
+          description: ""
+      summary: Login to the Agridence API with email and password.
+      tags:
+      - auth
+      x-codegen-request-body-name: data
+  /auth/logout/:
+    post:
+      description: Logout from the Agridence API.
+      operationId: auth_logout_create
+      responses:
+        "201":
+          content: {}
+          description: ""
+      tags:
+      - auth
+  /offer-panel/filter/:
+    get:
+      description: Endpoint to return the offer panel filter
+      operationId: offer-panel_filter_list
+      parameters:
+      - description: A page number within the paginated result set.
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          type: integer
+        style: form
+      - description: Number of results to return per page.
+        explode: true
+        in: query
+        name: page_size
+        required: false
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/offer_panel_filter_list_200_response'
+          description: ""
+      tags:
+      - offer-panel
+  /user/info:
+    get:
+      description: Returns user info and entitlements to certain services.
+      operationId: user_info
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user_info_200_response'
+          description: OK
+      tags:
+      - user-info
+components:
+  schemas:
+    CompanyDetails:
+      properties:
+        id:
+          readOnly: true
+          title: id
+          type: integer
+        name:
+          readOnly: true
+          title: Company Name
+          type: string
+        type:
+          readOnly: true
+          title: Company Type
+          type: string
+      required:
+      - id
+      - name
+      - type
+      type: object
+    MFAAuthToken:
+      example:
+        password: password
+        email: email
+        token: token
+      properties:
+        email:
+          minLength: 1
+          title: Email
+          type: string
+        password:
+          minLength: 1
+          title: Password
+          type: string
+        token:
+          minLength: 1
+          readOnly: true
+          title: Token
+          type: string
+      required:
+      - email
+      - password
+      type: object
+    OfferPanelFilterFactory:
+      example:
+        country: country
+        factory_code: factory_code
+        name: name
+        id: 1
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        name:
+          readOnly: true
+          title: Name
+          type: string
+        factory_code:
+          readOnly: true
+          title: Factory Code
+          type: string
+        country:
+          readOnly: true
+          title: Country
+          type: string
+      type: object
+    OfferPanelFilterCountry:
+      example:
+        code: code
+        name: name
+      properties:
+        code:
+          readOnly: true
+          title: Country Code
+          type: string
+        name:
+          readOnly: true
+          title: Country Name
+          type: string
+      type: object
+    OfferPanelFilterPort:
+      example:
+        name: name
+        id: 5
+        port_code: port_code
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        port_code:
+          readOnly: true
+          title: Port Code
+          type: string
+        name:
+          readOnly: true
+          title: Port Name
+          type: string
+      type: object
+    OfferPanelFilterGrade:
+      example:
+        country: country
+        name: name
+        id: 5
+        grade_code: grade_code
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        grade_code:
+          readOnly: true
+          title: Grade Code
+          type: string
+        country:
+          readOnly: true
+          title: Country
+          type: string
+        name:
+          readOnly: true
+          title: Port Name
+          type: string
+      type: object
+    OfferPanelFilterPackings:
+      example:
+        packing_code: packing_code
+        name: name
+        id: 2
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        packing_code:
+          readOnly: true
+          title: Packing Code
+          type: string
+        name:
+          readOnly: true
+          title: Packing Name
+          type: string
+      type: object
+    OfferPanelFilterPayments:
+      example:
+        name: name
+        id: 7
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        name:
+          readOnly: true
+          title: Payment Term Name
+          type: string
+      type: object
+    OfferPanelFilterShippings:
+      example:
+        incoterm: incoterm
+        name: name
+        id: 9
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        name:
+          readOnly: true
+          title: Shipping Name
+          type: string
+        incoterm:
+          readOnly: true
+          title: Incoterm
+          type: string
+      type: object
+    OfferPanelFilterDestinations:
+      example:
+        destination_country: destination_country
+        name: name
+        id: 3
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        name:
+          readOnly: true
+          title: Shipping Name
+          type: string
+        destination_country:
+          readOnly: true
+          title: Destination Country
+          type: string
+      type: object
+    OfferPanelFilter:
+      example:
+        default_payment: default_payment
+        default_port: default_port
+        months:
+        - 2023-01-01
+        - 2023-02-02
+        - 2023-12-01
+        shippings:
+        - incoterm: incoterm
+          name: name
+          id: 9
+        - incoterm: incoterm
+          name: name
+          id: 9
+        payments:
+        - name: name
+          id: 7
+        - name: name
+          id: 7
+        destinations:
+        - destination_country: destination_country
+          name: name
+          id: 3
+        - destination_country: destination_country
+          name: name
+          id: 3
+        factories:
+        - country: country
+          factory_code: factory_code
+          name: name
+          id: 1
+        - country: country
+          factory_code: factory_code
+          name: name
+          id: 1
+        default_destination: default_destination
+        countries:
+        - code: code
+          name: name
+        - code: code
+          name: name
+        grades:
+        - country: country
+          name: name
+          id: 5
+          grade_code: grade_code
+        - country: country
+          name: name
+          id: 5
+          grade_code: grade_code
+        type: Producer
+        ports:
+        - name: name
+          id: 5
+          port_code: port_code
+        - name: name
+          id: 5
+          port_code: port_code
+        default_shipping: default_shipping
+        packings:
+        - packing_code: packing_code
+          name: name
+          id: 2
+        - packing_code: packing_code
+          name: name
+          id: 2
+        default_factory: default_factory
+        default_grade: default_grade
+        name: name
+        default_packing: default_packing
+        id: 6
+        default_country: default_country
+      properties:
+        id:
+          readOnly: true
+          title: ID
+          type: integer
+        name:
+          maxLength: 100
+          minLength: 1
+          title: Name
+          type: string
+        type:
+          enum:
+          - Producer
+          - Consumer
+          title: Type
+          type: string
+        factories:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterFactory'
+          readOnly: true
+          title: Factories
+          type: array
+        default_factory:
+          readOnly: true
+          title: Default factory
+          type: string
+        countries:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterCountry'
+          readOnly: true
+          title: Countries
+          type: array
+        default_country:
+          readOnly: true
+          title: Default country
+          type: string
+        ports:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterPort'
+          readOnly: true
+          title: Ports
+          type: array
+        default_port:
+          readOnly: true
+          title: Default port
+          type: string
+        grades:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterGrade'
+          readOnly: true
+          title: Grades
+          type: array
+        default_grade:
+          readOnly: true
+          title: Default grade
+          type: string
+        packings:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterPackings'
+          readOnly: true
+          title: Packings
+          type: array
+        default_packing:
+          readOnly: true
+          title: Default packing
+          type: string
+        payments:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterPayments'
+          readOnly: true
+          title: Payments
+          type: array
+        default_payment:
+          readOnly: true
+          title: Default payment
+          type: string
+        shippings:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterShippings'
+          readOnly: true
+          title: Shippings
+          type: array
+        default_shipping:
+          readOnly: true
+          title: Default shipping
+          type: string
+        destinations:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilterDestinations'
+          readOnly: true
+          title: Destinations
+          type: array
+        default_destination:
+          readOnly: true
+          title: Default destination
+          type: string
+        months:
+          example:
+          - 2023-01-01
+          - 2023-02-02
+          - 2023-12-01
+          items:
+            type: string
+          readOnly: true
+          title: Months
+          type: array
+      required:
+      - name
+      - type
+      type: object
+    offer_panel_filter_list_200_response:
+      example:
+        next: https://openapi-generator.tech
+        previous: https://openapi-generator.tech
+        count: 0
+        results:
+        - default_payment: default_payment
+          default_port: default_port
+          months:
+          - 2023-01-01
+          - 2023-02-02
+          - 2023-12-01
+          shippings:
+          - incoterm: incoterm
+            name: name
+            id: 9
+          - incoterm: incoterm
+            name: name
+            id: 9
+          payments:
+          - name: name
+            id: 7
+          - name: name
+            id: 7
+          destinations:
+          - destination_country: destination_country
+            name: name
+            id: 3
+          - destination_country: destination_country
+            name: name
+            id: 3
+          factories:
+          - country: country
+            factory_code: factory_code
+            name: name
+            id: 1
+          - country: country
+            factory_code: factory_code
+            name: name
+            id: 1
+          default_destination: default_destination
+          countries:
+          - code: code
+            name: name
+          - code: code
+            name: name
+          grades:
+          - country: country
+            name: name
+            id: 5
+            grade_code: grade_code
+          - country: country
+            name: name
+            id: 5
+            grade_code: grade_code
+          type: Producer
+          ports:
+          - name: name
+            id: 5
+            port_code: port_code
+          - name: name
+            id: 5
+            port_code: port_code
+          default_shipping: default_shipping
+          packings:
+          - packing_code: packing_code
+            name: name
+            id: 2
+          - packing_code: packing_code
+            name: name
+            id: 2
+          default_factory: default_factory
+          default_grade: default_grade
+          name: name
+          default_packing: default_packing
+          id: 6
+          default_country: default_country
+        - default_payment: default_payment
+          default_port: default_port
+          months:
+          - 2023-01-01
+          - 2023-02-02
+          - 2023-12-01
+          shippings:
+          - incoterm: incoterm
+            name: name
+            id: 9
+          - incoterm: incoterm
+            name: name
+            id: 9
+          payments:
+          - name: name
+            id: 7
+          - name: name
+            id: 7
+          destinations:
+          - destination_country: destination_country
+            name: name
+            id: 3
+          - destination_country: destination_country
+            name: name
+            id: 3
+          factories:
+          - country: country
+            factory_code: factory_code
+            name: name
+            id: 1
+          - country: country
+            factory_code: factory_code
+            name: name
+            id: 1
+          default_destination: default_destination
+          countries:
+          - code: code
+            name: name
+          - code: code
+            name: name
+          grades:
+          - country: country
+            name: name
+            id: 5
+            grade_code: grade_code
+          - country: country
+            name: name
+            id: 5
+            grade_code: grade_code
+          type: Producer
+          ports:
+          - name: name
+            id: 5
+            port_code: port_code
+          - name: name
+            id: 5
+            port_code: port_code
+          default_shipping: default_shipping
+          packings:
+          - packing_code: packing_code
+            name: name
+            id: 2
+          - packing_code: packing_code
+            name: name
+            id: 2
+          default_factory: default_factory
+          default_grade: default_grade
+          name: name
+          default_packing: default_packing
+          id: 6
+          default_country: default_country
+      properties:
+        count:
+          type: integer
+        next:
+          format: uri
+          nullable: true
+          type: string
+        previous:
+          format: uri
+          nullable: true
+          type: string
+        results:
+          items:
+            $ref: '#/components/schemas/OfferPanelFilter'
+          type: array
+      required:
+      - count
+      - results
+      type: object
+    user_info_200_response:
+      example:
+        sgxtsr_subscription: sgxtsr_subscription
+        name: name
+        company: "{}"
+      properties:
+        company:
+          properties: {}
+          type: object
+        name:
+          type: string
+        sgxtsr_subscription:
+          nullable: true
+          title: SGXTSRSubscription
+          type: string
+      required:
+      - company
+      - name
+      - sgxtsr_subscription
+      type: object

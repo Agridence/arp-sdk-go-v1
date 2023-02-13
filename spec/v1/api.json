@@ -1,0 +1,494 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Agridence API",
+		"description": "Agridence",
+		"termsOfService": "https://www.agridence.com/",
+		"contact": {
+			"email": "it@agridence.com"
+		},
+		"version": "v1"
+	},
+	"host": "api-testing.heveaconnect.com",
+	"schemes": ["https"],
+	"basePath": "/api/v1",
+	"consumes": ["application/json"],
+	"produces": ["application/json"],
+	"securityDefinitions": {
+		"TokenKeyAuth": {
+			"type": "apiKey", "in": "Header", "name": "Authorization"
+		}
+	},
+	"paths": {
+		"/auth/login/": {
+			"post": {
+				"operationId": "auth_login_create",
+				"description": "Login to the Agridence API with email and password.",
+				"parameters": [{
+					"name": "data",
+					"in": "body",
+					"required": true,
+					"schema": {
+						"$ref": "#/definitions/MFAAuthToken"
+					}
+				}],
+				"responses": {
+					"201": {
+						"description": "",
+						"schema": {
+							"$ref": "#/definitions/MFAAuthToken"
+						}
+					}
+				},
+				"tags": ["auth"]
+			},
+			"parameters": []
+		},
+		"/auth/logout/": {
+			"post": {
+				"operationId": "auth_logout_create",
+				"description": "Logout from the Agridence API.",
+				"parameters": [],
+				"responses": {
+					"201": {
+						"description": ""
+					}
+				},
+				"tags": ["auth"]
+			},
+			"parameters": []
+		},
+		"/offer-panel/filter/": {
+			"get": {
+				"security": [
+					"TokenKeyAuth"
+				],
+				"operationId": "offer-panel_filter_list",
+				"description": "Endpoint to return the offer panel filter",
+				"parameters": [
+					{
+					"name": "page",
+					"in": "query",
+					"description": "A page number within the paginated result set.",
+					"required": false,
+					"type": "integer"
+				}, {
+					"name": "page_size",
+					"in": "query",
+					"description": "Number of results to return per page.",
+					"required": false,
+					"type": "integer"
+				}],
+				"responses": {
+					"200": {
+						"description": "",
+						"schema": {
+							"required": ["count", "results"],
+							"type": "object",
+							"properties": {
+								"count": {
+									"type": "integer"
+								},
+								"next": {
+									"type": "string",
+									"format": "uri",
+									"x-nullable": true
+								},
+								"previous": {
+									"type": "string",
+									"format": "uri",
+									"x-nullable": true
+								},
+								"results": {
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/OfferPanelFilter"
+									}
+								}
+							}
+						}
+					}
+				},
+				"tags": ["offer-panel"]
+			},
+			"parameters": []
+		},
+		"/user/info": {
+			"get": {
+				"security": [
+					"TokenKeyAuth"
+				],
+				"operationId": "user_info",
+				"description": "Returns user info and entitlements to certain services.",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"required": ["company", "name", "sgxtsr_subscription"],
+							"type": "object",
+							"properties": {
+								"company": {
+									"type": "object",
+									"items": {
+										"$ref": "#/definitions/CompanyDetails"
+									}
+								},
+								"name": {
+									"type": "string"
+								},
+								"sgxtsr_subscription": {
+									"type": "string",
+									"x-nullable": true,
+									"title": "SGXTSRSubscription"
+								}
+							}
+						}
+					}
+				},
+				"tags": ["user-info"]
+			},
+			"parameters": []
+		}
+	},
+	"definitions": {
+		"CompanyDetails": {
+			"required": ["id", "name", "type"],
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "integer",
+					"readOnly": true,
+					"title": "id"
+				},
+				"name": {
+					"type": "string",
+					"title": "Company Name",
+					"readOnly": true
+				},
+				"type": {
+					"type": "string",
+					"title": "Company Type",
+					"readOnly": true
+				}
+			}
+		},
+		"MFAAuthToken": {
+			"required": ["email", "password"],
+			"type": "object",
+			"properties": {
+				"email": {
+					"title": "Email",
+					"type": "string",
+					"minLength": 1
+				},
+				"password": {
+					"title": "Password",
+					"type": "string",
+					"minLength": 1
+				},
+				"token": {
+					"title": "Token",
+					"type": "string",
+					"readOnly": true,
+					"minLength": 1
+				}
+			}
+		},
+		"OfferPanelFilterFactory": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Name",
+					"type": "string",
+					"readOnly": true
+				},
+				"factory_code": {
+					"title": "Factory Code",
+					"type": "string",
+					"readOnly": true
+				},
+				"country": {
+					"title": "Country",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterCountry": {
+			"type": "object",
+			"properties": {
+				"code": {
+					"title": "Country Code",
+					"type": "string",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Country Name",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterPort": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"port_code": {
+					"title": "Port Code",
+					"type": "string",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Port Name",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterGrade": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"grade_code": {
+					"title": "Grade Code",
+					"type": "string",
+					"readOnly": true
+				},
+				"country": {
+					"title": "Country",
+					"type": "string",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Port Name",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterPackings": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"packing_code": {
+					"title": "Packing Code",
+					"type": "string",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Packing Name",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterPayments": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Payment Term Name",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterShippings": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Shipping Name",
+					"type": "string",
+					"readOnly": true
+				},
+				"incoterm": {
+					"title": "Incoterm",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilterDestinations": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Shipping Name",
+					"type": "string",
+					"readOnly": true
+				},
+				"destination_country": {
+					"title": "Destination Country",
+					"type": "string",
+					"readOnly": true
+				}
+			}
+		},
+		"OfferPanelFilter": {
+			"required": ["name", "type"],
+			"type": "object",
+			"properties": {
+				"id": {
+					"title": "ID",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"title": "Name",
+					"type": "string",
+					"maxLength": 100,
+					"minLength": 1
+				},
+				"type": {
+					"title": "Type",
+					"type": "string",
+					"enum": ["Producer", "Consumer"]
+				},
+				"factories": {
+					"title": "Factories",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterFactory"
+					},
+					"readOnly": true
+				},
+				"default_factory": {
+					"title": "Default factory",
+					"type": "string",
+					"readOnly": true
+				},
+				"countries": {
+					"title": "Countries",
+					"type": "array",
+					"readOnly": true,
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterCountry"
+					}
+				},
+				"default_country": {
+					"title": "Default country",
+					"type": "string",
+					"readOnly": true
+				},
+				"ports": {
+					"title": "Ports",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterPort"
+					},
+					"readOnly": true
+				},
+				"default_port": {
+					"title": "Default port",
+					"type": "string",
+					"readOnly": true
+				},
+				"grades": {
+					"title": "Grades",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterGrade"
+					},
+					"readOnly": true
+				},
+				"default_grade": {
+					"title": "Default grade",
+					"type": "string",
+					"readOnly": true
+				},
+				"packings": {
+					"title": "Packings",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterPackings"
+					},
+					"readOnly": true
+				},
+				"default_packing": {
+					"title": "Default packing",
+					"type": "string",
+					"readOnly": true
+				},
+				"payments": {
+					"title": "Payments",
+					"type": "array",
+					"items": {
+						"$ref":"#/definitions/OfferPanelFilterPayments"
+					},
+					"readOnly": true
+				},
+				"default_payment": {
+					"title": "Default payment",
+					"type": "string",
+					"readOnly": true
+				},
+				"shippings": {
+					"title": "Shippings",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterShippings"
+					},
+					"readOnly": true
+				},
+				"default_shipping": {
+					"title": "Default shipping",
+					"type": "string",
+					"readOnly": true
+				},
+				"destinations": {
+					"title": "Destinations",
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OfferPanelFilterDestinations"
+					},
+					"readOnly": true
+				},
+				"default_destination": {
+					"title": "Default destination",
+					"type": "string",
+					"readOnly": true
+				},
+				"months": {
+					"title": "Months",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"example": ["2023-01-01", "2023-02-02", "2023-12-01"],
+					"readOnly": true
+				}
+			}
+		}
+	}
+}
