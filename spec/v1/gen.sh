@@ -1,1 +1,1 @@
-openapi-generator generate -g go -i spec/v1/api.json --git-repo-id arp-sdk-go-v1 --git-user-id HeveaConnect --additional-properties packageName=arp_sdk_go_v1,packageVersion=1.0.0 --package-name arp_sdk_go_v1
+openapi-generator generate -g go -i spec/v1/apiv2.json --git-repo-id arp-sdk-go-v1 --git-user-id HeveaConnect --additional-properties packageName=arp_sdk_go_v1,packageVersion=1.0.0;environment=api-testing --package-name arp_sdk_go_v1

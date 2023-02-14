@@ -135,6 +135,11 @@
     },
     "/user/info": {
       "get": {
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
         "tags": [
           "user-info"
         ],
@@ -175,6 +180,13 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
+    },
     "schemas": {
       "CompanyDetails": {
         "required": [

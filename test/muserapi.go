@@ -10,15 +10,28 @@ import (
 func main() {
 
     ctx := context.Background()
-    ctx = context.WithValue(ctx, openapiclient.ContextServerIndex, "0")
-    ctx = context.WithValue(ctx, openapiclient.ContextServerVariables, map[string]string{"environment": "api-testing",})
+    // ctx = context.WithValue(ctx, openapiclient.ContextServerIndex, "0")
+    // ctx = context.WithValue(ctx, openapiclient.ContextServerVariables, map[string]string{"environment": "api-testing",})
 
     configuration := openapiclient.NewConfiguration()
     configuration.Debug = true
-    configuration.AddDefaultHeader("Authorization", "Token 0b99fddd9b8268e157df0f4746855763b9936c84")
     apiClient := openapiclient.NewAPIClient(configuration)
     // fmt.Println(configuration.Host)
-    resp, r, err := apiClient.UserInfoApi.UserInfo(context.Background()).Execute()
+    ctx = context.WithValue(ctx, openapiclient.ContextAPIKeys, map[string]openapiclient.APIKey{"ApiKeyAuth": openapiclient.APIKey{Key: "19d19183d5611a8e61e957ce9f722b0721a8f05d", Prefix: "Token",}})
+    // start verify context
+       if auth, ok := ctx.Value(openapiclient.ContextAPIKeys).(map[string]openapiclient.APIKey); ok {
+                        if apiKey, ok := auth["ApiKeyAuth"]; ok {
+                                var key string
+                                if apiKey.Prefix != "" {
+                                        key = apiKey.Prefix + " " + apiKey.Key
+                                } else {
+                                        key = apiKey.Key
+                                }
+             			fmt.Println("key = " + key)
+                        }
+                }
+    // end verify context
+    resp, r, err := apiClient.UserInfoApi.UserInfo(ctx).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserInfoApi.UserInfo``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

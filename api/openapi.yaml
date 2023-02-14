@@ -87,6 +87,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/user_info_200_response'
           description: OK
+      security:
+      - ApiKeyAuth: []
       tags:
       - user-info
 components:
@@ -655,3 +657,8 @@ components:
       - name
       - sgxtsr_subscription
       type: object
+  securitySchemes:
+    ApiKeyAuth:
+      in: header
+      name: Authorization
+      type: apiKey
