@@ -89,6 +89,7 @@ paths:
           description: OK
       security:
       - ApiKeyAuth: []
+        UserAgent: []
       tags:
       - user-info
 components:
@@ -658,6 +659,10 @@ components:
       - sgxtsr_subscription
       type: object
   securitySchemes:
+    UserAgent:
+      in: header
+      name: User-Agent
+      type: apiKey
     ApiKeyAuth:
       in: header
       name: Authorization

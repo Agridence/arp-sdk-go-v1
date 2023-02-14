@@ -137,7 +137,8 @@
       "get": {
         "security": [
           {
-            "ApiKeyAuth": []
+            "ApiKeyAuth": [],
+            "UserAgent": []
           }
         ],
         "tags": [
@@ -181,6 +182,11 @@
   },
   "components": {
     "securitySchemes": {
+      "UserAgent": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "User-Agent"
+      },
       "ApiKeyAuth": {
         "type": "apiKey",
         "in": "header",

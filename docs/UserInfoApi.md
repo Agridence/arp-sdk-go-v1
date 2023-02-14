@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiUserInfoRequest struct via
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth)
+[ApiKeyAuth](../README.md#ApiKeyAuth), [UserAgent](../README.md#UserAgent)
 
 ### HTTP request headers
 

@@ -17,7 +17,10 @@ func main() {
     configuration.Debug = true
     apiClient := openapiclient.NewAPIClient(configuration)
     // fmt.Println(configuration.Host)
-    ctx = context.WithValue(ctx, openapiclient.ContextAPIKeys, map[string]openapiclient.APIKey{"ApiKeyAuth": openapiclient.APIKey{Key: "2eb76d3e8cd28d4e43ac8249d14429c11554b430", Prefix: "Token",}})
+    ctx = context.WithValue(ctx, openapiclient.ContextAPIKeys, map[string]openapiclient.APIKey{
+	"ApiKeyAuth": openapiclient.APIKey{Key: "4527ca23d96c5771d123a254bd32b5a6a8c35c1a", Prefix: "Token",},
+	"UserAgent": openapiclient.APIKey{Key: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15", Prefix: "",},
+	})
     // start verify context
        if auth, ok := ctx.Value(openapiclient.ContextAPIKeys).(map[string]openapiclient.APIKey); ok {
                         if apiKey, ok := auth["ApiKeyAuth"]; ok {
