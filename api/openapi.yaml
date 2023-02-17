@@ -643,10 +643,15 @@ components:
         sgxtsr_subscription: sgxtsr_subscription
         name: name
         company: "{}"
+        id: 0
       properties:
         company:
           properties: {}
           type: object
+        id:
+          nullable: false
+          title: UserId
+          type: integer
         name:
           type: string
         sgxtsr_subscription:
@@ -655,6 +660,7 @@ components:
           type: string
       required:
       - company
+      - id
       - name
       - sgxtsr_subscription
       type: object

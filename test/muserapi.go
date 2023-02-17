@@ -18,7 +18,7 @@ func main() {
     apiClient := openapiclient.NewAPIClient(configuration)
     // fmt.Println(configuration.Host)
     ctx = context.WithValue(ctx, openapiclient.ContextAPIKeys, map[string]openapiclient.APIKey{
-	"ApiKeyAuth": openapiclient.APIKey{Key: "4527ca23d96c5771d123a254bd32b5a6a8c35c1a", Prefix: "Token",},
+	"ApiKeyAuth": openapiclient.APIKey{Key: "839c3dd8031266ca4b6e36122c0dfa12f6140985", Prefix: "Token",},
 	"UserAgent": openapiclient.APIKey{Key: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15", Prefix: "",},
 	})
     // start verify context
@@ -40,5 +40,5 @@ func main() {
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `UserInfo`: UserInfo200Response
-    fmt.Fprintf(os.Stdout, "Response from `UserInfoApi.UserInfo`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `UserInfoApi.UserInfo`: %v, %d\n", resp, resp.GetId())
 }

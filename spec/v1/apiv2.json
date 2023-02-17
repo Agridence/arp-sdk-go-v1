@@ -155,13 +155,19 @@
                   "required": [
                     "company",
                     "name",
-                    "sgxtsr_subscription"
+                    "sgxtsr_subscription",
+                    "id"
                   ],
                   "type": "object",
                   "properties": {
                     "company": {
                       "type": "object",
                       "properties": {}
+                    },
+                    "id": {
+                      "type": "integer",
+                      "title": "UserId",
+                      "nullable": false
                     },
                     "name": {
                       "type": "string"

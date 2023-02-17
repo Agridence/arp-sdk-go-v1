@@ -21,6 +21,7 @@ var _ MappedNullable = &UserInfo200Response{}
 // UserInfo200Response struct for UserInfo200Response
 type UserInfo200Response struct {
 	Company map[string]interface{} `json:"company"`
+	Id int32 `json:"id"`
 	Name string `json:"name"`
 	SgxtsrSubscription NullableString `json:"sgxtsr_subscription"`
 }
@@ -29,9 +30,10 @@ type UserInfo200Response struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserInfo200Response(company map[string]interface{}, name string, sgxtsrSubscription NullableString) *UserInfo200Response {
+func NewUserInfo200Response(company map[string]interface{}, id int32, name string, sgxtsrSubscription NullableString) *UserInfo200Response {
 	this := UserInfo200Response{}
 	this.Company = company
+	this.Id = id
 	this.Name = name
 	this.SgxtsrSubscription = sgxtsrSubscription
 	return &this
@@ -67,6 +69,30 @@ func (o *UserInfo200Response) GetCompanyOk() (map[string]interface{}, bool) {
 // SetCompany sets field value
 func (o *UserInfo200Response) SetCompany(v map[string]interface{}) {
 	o.Company = v
+}
+
+// GetId returns the Id field value
+func (o *UserInfo200Response) GetId() int32 {
+	if o == nil {
+		var ret int32
+		return ret
+	}
+
+	return o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value
+// and a boolean to check if the value has been set.
+func (o *UserInfo200Response) GetIdOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Id, true
+}
+
+// SetId sets field value
+func (o *UserInfo200Response) SetId(v int32) {
+	o.Id = v
 }
 
 // GetName returns the Name field value
@@ -130,6 +156,7 @@ func (o UserInfo200Response) MarshalJSON() ([]byte, error) {
 func (o UserInfo200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["company"] = o.Company
+	toSerialize["id"] = o.Id
 	toSerialize["name"] = o.Name
 	toSerialize["sgxtsr_subscription"] = o.SgxtsrSubscription.Get()
 	return toSerialize, nil

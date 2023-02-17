@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | **map[string]interface{}** |  | 
+**Id** | **int32** |  | 
 **Name** | **string** |  | 
 **SgxtsrSubscription** | **NullableString** |  | 
 
@@ -12,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewUserInfo200Response
 
-`func NewUserInfo200Response(company map[string]interface{}, name string, sgxtsrSubscription NullableString, ) *UserInfo200Response`
+`func NewUserInfo200Response(company map[string]interface{}, id int32, name string, sgxtsrSubscription NullableString, ) *UserInfo200Response`
 
 NewUserInfo200Response instantiates a new UserInfo200Response object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +46,26 @@ and a boolean to check if the value has been set.
 `func (o *UserInfo200Response) SetCompany(v map[string]interface{})`
 
 SetCompany sets Company field to given value.
+
+
+### GetId
+
+`func (o *UserInfo200Response) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *UserInfo200Response) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *UserInfo200Response) SetId(v int32)`
+
+SetId sets Id field to given value.
 
 
 ### GetName
