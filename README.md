@@ -21,7 +21,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```golang
-import arp_sdk_go_v1 "github.com/HeveaConnect/arp-sdk-go-v1"
+import arp_sdk_go_v1 "github.com/Agridence/arp-sdk-go-v1"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
