@@ -53,6 +53,8 @@ type APIClient struct {
 
 	AuthApi *AuthApiService
 
+	GraphDataApi *GraphDataApiService
+
 	OfferPanelApi *OfferPanelApiService
 
 	UserInfoApi *UserInfoApiService
@@ -75,6 +77,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.AuthApi = (*AuthApiService)(&c.common)
+	c.GraphDataApi = (*GraphDataApiService)(&c.common)
 	c.OfferPanelApi = (*OfferPanelApiService)(&c.common)
 	c.UserInfoApi = (*UserInfoApiService)(&c.common)
 

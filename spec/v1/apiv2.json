@@ -184,6 +184,36 @@
           }
         }
       }
+    },
+    "/dashboard/graph-without-sicom": {
+      "get": {
+        "security": [
+          {
+            "ApiKeyAuth": [],
+            "UserAgent": []
+          }
+        ],
+        "tags": [
+          "graph-data"
+        ],
+        "description": "Returns self historical data of trade confirmation statistics.",
+        "operationId": "graph_data",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "prices"
+                  ],
+                  "$ref": "#/components/schemas/GraphDataForSymbol"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -200,6 +230,28 @@
       }
     },
     "schemas": {
+      "GraphDataForSymbol": {
+        "type": "object",
+        "properties": {
+          "prices": {
+            "$ref": "#/components/schemas/GraphDataForSymbolPrices"
+          }
+        }
+      },
+      "GraphDataForSymbolPrices": {
+        "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/GraphDataForSymbolCategory"
+            }
+      },
+      "GraphDataForSymbolCategory": {
+        "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "title": "category",
+            "items": {"properties": { "x": { "title": "x","type": "string" },"y": { "title": "x","type": "float"} }}
+          }
+      },
       "CompanyDetails": {
         "required": [
           "id",

@@ -3,12 +3,16 @@
 README.md
 api/openapi.yaml
 api_auth.go
+api_graph_data.go
 api_offer_panel.go
 api_user_info.go
 client.go
 configuration.go
 docs/AuthApi.md
 docs/CompanyDetails.md
+docs/GraphDataApi.md
+docs/GraphDataForSymbol.md
+docs/GraphDataForSymbolCategoryValueInner.md
 docs/MFAAuthToken.md
 docs/OfferPanelApi.md
 docs/OfferPanelFilter.md
@@ -27,6 +31,8 @@ git_push.sh
 go.mod
 go.sum
 model_company_details.go
+model_graph_data_for_symbol.go
+model_graph_data_for_symbol_category_value_inner.go
 model_mfa_auth_token.go
 model_offer_panel_filter.go
 model_offer_panel_filter_country.go

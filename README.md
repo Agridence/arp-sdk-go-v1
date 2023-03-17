@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**AuthLoginCreate**](docs/AuthApi.md#authlogincreate) | **Post** /auth/login/ | Login to the Agridence API with email and password.
 *AuthApi* | [**AuthLogoutCreate**](docs/AuthApi.md#authlogoutcreate) | **Post** /auth/logout/ | 
+*GraphDataApi* | [**GraphData**](docs/GraphDataApi.md#graphdata) | **Get** /dashboard/graph-without-sicom | 
 *OfferPanelApi* | [**OfferPanelFilterList**](docs/OfferPanelApi.md#offerpanelfilterlist) | **Get** /offer-panel/filter/ | 
 *UserInfoApi* | [**UserInfo**](docs/UserInfoApi.md#userinfo) | **Get** /user/info | 
 
@@ -86,6 +87,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CompanyDetails](docs/CompanyDetails.md)
+ - [GraphDataForSymbol](docs/GraphDataForSymbol.md)
+ - [GraphDataForSymbolCategoryValueInner](docs/GraphDataForSymbolCategoryValueInner.md)
  - [MFAAuthToken](docs/MFAAuthToken.md)
  - [OfferPanelFilter](docs/OfferPanelFilter.md)
  - [OfferPanelFilterCountry](docs/OfferPanelFilterCountry.md)

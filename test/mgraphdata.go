@@ -34,11 +34,10 @@ func main() {
                         }
                 }
     // end verify context
-    resp, r, err := apiClient.UserInfoApi.UserInfo(ctx).Execute()
+    resp, r, err := apiClient.GraphDataApi.GraphData(ctx).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `UserInfoApi.UserInfo``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `GraphDataApi.GraphData`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UserInfo`: UserInfo200Response
-    fmt.Fprintf(os.Stdout, "Response from `UserInfoApi.UserInfo`: %v, %d\n", resp, resp.GetId())
+    fmt.Fprintf(os.Stdout, "Response from `GraphDataApi.GraphData`: %v\n", (*resp.Prices)["2023-03-01"]["SIR20"])
 }

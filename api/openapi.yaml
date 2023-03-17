@@ -92,8 +92,45 @@ paths:
         UserAgent: []
       tags:
       - user-info
+  /dashboard/graph-without-sicom:
+    get:
+      description: Returns self historical data of trade confirmation statistics.
+      operationId: graph_data
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphDataForSymbol'
+          description: OK
+      security:
+      - ApiKeyAuth: []
+        UserAgent: []
+      tags:
+      - graph-data
 components:
   schemas:
+    GraphDataForSymbol:
+      example:
+        prices:
+          key: null
+      properties:
+        prices:
+          additionalProperties:
+            $ref: '#/components/schemas/GraphDataForSymbolCategory'
+          type: object
+      type: object
+    GraphDataForSymbolPrices:
+      additionalProperties:
+        $ref: '#/components/schemas/GraphDataForSymbolCategory'
+      type: object
+    GraphDataForSymbolCategory:
+      additionalProperties:
+        items:
+          $ref: '#/components/schemas/GraphDataForSymbolCategory_value_inner'
+        title: category
+        type: array
+      type: object
     CompanyDetails:
       properties:
         id:
@@ -664,6 +701,14 @@ components:
       - name
       - sgxtsr_subscription
       type: object
+    GraphDataForSymbolCategory_value_inner:
+      properties:
+        x:
+          title: x
+          type: string
+        "y":
+          title: x
+          type: float
   securitySchemes:
     UserAgent:
       in: header
