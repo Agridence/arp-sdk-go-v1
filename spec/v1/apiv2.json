@@ -18,6 +18,24 @@
           "enum": ["api-platform-testing", "api-platform-staging", "api-platform"]
         }
       }
+    },
+    {
+      "url": "https://{environment}.agridence.com/api/v1",
+      "variables": {
+        "environment": {
+          "default": "api-platform-staging",
+          "enum": ["api-platform-testing", "api-platform-staging", "api-platform"]
+        }
+      }
+    },
+    {
+      "url": "https://{environment}.agridence.com/api/v1",
+      "variables": {
+        "environment": {
+          "default": "api-platform",
+          "enum": ["api-platform-testing", "api-platform-staging", "api-platform"]
+        }
+      }
     }
   ],
   "paths": {

@@ -108,6 +108,36 @@ func NewConfiguration() *Configuration {
 					},
 				},
 			},
+			{
+				URL: "https://{environment}.agridence.com/api/v1",
+				Description: "No description provided",
+				Variables: map[string]ServerVariable{
+					"environment": ServerVariable{
+						Description: "No description provided",
+						DefaultValue: "api-platform-staging",
+						EnumValues: []string{
+							"api-platform-testing",
+							"api-platform-staging",
+							"api-platform",
+						},
+					},
+				},
+			},
+			{
+				URL: "https://{environment}.agridence.com/api/v1",
+				Description: "No description provided",
+				Variables: map[string]ServerVariable{
+					"environment": ServerVariable{
+						Description: "No description provided",
+						DefaultValue: "api-platform",
+						EnumValues: []string{
+							"api-platform-testing",
+							"api-platform-staging",
+							"api-platform",
+						},
+					},
+				},
+			},
 		},
 		OperationServers: map[string]ServerConfigurations{
 		},

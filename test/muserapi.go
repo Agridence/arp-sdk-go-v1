@@ -10,8 +10,8 @@ import (
 func main() {
 
     ctx := context.Background()
-    // ctx = context.WithValue(ctx, openapiclient.ContextServerIndex, 1)
-    ctx = context.WithValue(ctx, openapiclient.ContextServerVariables, map[string]string{"environment": "api-platform-staging",})
+    ctx = context.WithValue(ctx, openapiclient.ContextServerIndex, 0)
+    // ctx = context.WithValue(ctx, openapiclient.ContextServerVariables, map[string]string{"environment": "api-platform-testing",})
 
     configuration := openapiclient.NewConfiguration()
     configuration.Debug = true
