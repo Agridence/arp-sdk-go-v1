@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -43,7 +43,7 @@ func NewOfferPanelFilterCountryWithDefaults() *OfferPanelFilterCountry {
 
 // GetCode returns the Code field value if set, zero value otherwise.
 func (o *OfferPanelFilterCountry) GetCode() string {
-	if o == nil || isNil(o.Code) {
+	if o == nil || IsNil(o.Code) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *OfferPanelFilterCountry) GetCode() string {
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterCountry) GetCodeOk() (*string, bool) {
-	if o == nil || isNil(o.Code) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return o.Code, true
@@ -61,7 +61,7 @@ func (o *OfferPanelFilterCountry) GetCodeOk() (*string, bool) {
 
 // HasCode returns a boolean if a field has been set.
 func (o *OfferPanelFilterCountry) HasCode() bool {
-	if o != nil && !isNil(o.Code) {
+	if o != nil && !IsNil(o.Code) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *OfferPanelFilterCountry) SetCode(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterCountry) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *OfferPanelFilterCountry) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterCountry) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -93,7 +93,7 @@ func (o *OfferPanelFilterCountry) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterCountry) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 

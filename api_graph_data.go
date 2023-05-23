@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -14,7 +14,7 @@ package arp_sdk_go_v1
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 )
@@ -88,20 +88,6 @@ func (a *GraphDataApiService) GraphDataExecute(r ApiGraphDataRequest) (*GraphDat
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["ApiKeyAuth"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["UserAgent"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -110,6 +96,20 @@ func (a *GraphDataApiService) GraphDataExecute(r ApiGraphDataRequest) (*GraphDat
 					key = apiKey.Key
 				}
 				localVarHeaderParams["User-Agent"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["ApiKeyAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
 			}
 		}
 	}
@@ -123,9 +123,9 @@ func (a *GraphDataApiService) GraphDataExecute(r ApiGraphDataRequest) (*GraphDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

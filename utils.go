@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -329,8 +329,8 @@ func (v *NullableTime) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
-// isNil checks if an input is nil
-func isNil(i interface{}) bool {
+// IsNil checks if an input is nil
+func IsNil(i interface{}) bool {
 	if i == nil {
 		return true
 	}

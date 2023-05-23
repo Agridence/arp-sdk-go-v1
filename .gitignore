@@ -22,5 +22,4 @@ _testmain.go
 *.exe
 *.test
 *.prof
-git_push.sh
 test/bin

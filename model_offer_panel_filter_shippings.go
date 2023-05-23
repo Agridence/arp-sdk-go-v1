@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -44,7 +44,7 @@ func NewOfferPanelFilterShippingsWithDefaults() *OfferPanelFilterShippings {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterShippings) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *OfferPanelFilterShippings) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterShippings) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -62,7 +62,7 @@ func (o *OfferPanelFilterShippings) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterShippings) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *OfferPanelFilterShippings) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterShippings) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *OfferPanelFilterShippings) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterShippings) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -94,7 +94,7 @@ func (o *OfferPanelFilterShippings) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterShippings) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *OfferPanelFilterShippings) SetName(v string) {
 
 // GetIncoterm returns the Incoterm field value if set, zero value otherwise.
 func (o *OfferPanelFilterShippings) GetIncoterm() string {
-	if o == nil || isNil(o.Incoterm) {
+	if o == nil || IsNil(o.Incoterm) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *OfferPanelFilterShippings) GetIncoterm() string {
 // GetIncotermOk returns a tuple with the Incoterm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterShippings) GetIncotermOk() (*string, bool) {
-	if o == nil || isNil(o.Incoterm) {
+	if o == nil || IsNil(o.Incoterm) {
 		return nil, false
 	}
 	return o.Incoterm, true
@@ -126,7 +126,7 @@ func (o *OfferPanelFilterShippings) GetIncotermOk() (*string, bool) {
 
 // HasIncoterm returns a boolean if a field has been set.
 func (o *OfferPanelFilterShippings) HasIncoterm() bool {
-	if o != nil && !isNil(o.Incoterm) {
+	if o != nil && !IsNil(o.Incoterm) {
 		return true
 	}
 

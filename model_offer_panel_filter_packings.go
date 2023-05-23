@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -44,7 +44,7 @@ func NewOfferPanelFilterPackingsWithDefaults() *OfferPanelFilterPackings {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterPackings) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *OfferPanelFilterPackings) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPackings) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -62,7 +62,7 @@ func (o *OfferPanelFilterPackings) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterPackings) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *OfferPanelFilterPackings) SetId(v int32) {
 
 // GetPackingCode returns the PackingCode field value if set, zero value otherwise.
 func (o *OfferPanelFilterPackings) GetPackingCode() string {
-	if o == nil || isNil(o.PackingCode) {
+	if o == nil || IsNil(o.PackingCode) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *OfferPanelFilterPackings) GetPackingCode() string {
 // GetPackingCodeOk returns a tuple with the PackingCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPackings) GetPackingCodeOk() (*string, bool) {
-	if o == nil || isNil(o.PackingCode) {
+	if o == nil || IsNil(o.PackingCode) {
 		return nil, false
 	}
 	return o.PackingCode, true
@@ -94,7 +94,7 @@ func (o *OfferPanelFilterPackings) GetPackingCodeOk() (*string, bool) {
 
 // HasPackingCode returns a boolean if a field has been set.
 func (o *OfferPanelFilterPackings) HasPackingCode() bool {
-	if o != nil && !isNil(o.PackingCode) {
+	if o != nil && !IsNil(o.PackingCode) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *OfferPanelFilterPackings) SetPackingCode(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterPackings) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *OfferPanelFilterPackings) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPackings) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -126,7 +126,7 @@ func (o *OfferPanelFilterPackings) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterPackings) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 

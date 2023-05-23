@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -44,7 +44,7 @@ func NewOfferPanelFilterPortWithDefaults() *OfferPanelFilterPort {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterPort) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *OfferPanelFilterPort) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPort) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -62,7 +62,7 @@ func (o *OfferPanelFilterPort) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterPort) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *OfferPanelFilterPort) SetId(v int32) {
 
 // GetPortCode returns the PortCode field value if set, zero value otherwise.
 func (o *OfferPanelFilterPort) GetPortCode() string {
-	if o == nil || isNil(o.PortCode) {
+	if o == nil || IsNil(o.PortCode) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *OfferPanelFilterPort) GetPortCode() string {
 // GetPortCodeOk returns a tuple with the PortCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPort) GetPortCodeOk() (*string, bool) {
-	if o == nil || isNil(o.PortCode) {
+	if o == nil || IsNil(o.PortCode) {
 		return nil, false
 	}
 	return o.PortCode, true
@@ -94,7 +94,7 @@ func (o *OfferPanelFilterPort) GetPortCodeOk() (*string, bool) {
 
 // HasPortCode returns a boolean if a field has been set.
 func (o *OfferPanelFilterPort) HasPortCode() bool {
-	if o != nil && !isNil(o.PortCode) {
+	if o != nil && !IsNil(o.PortCode) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *OfferPanelFilterPort) SetPortCode(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterPort) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *OfferPanelFilterPort) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPort) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -126,7 +126,7 @@ func (o *OfferPanelFilterPort) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterPort) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 

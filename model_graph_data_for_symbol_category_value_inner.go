@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -43,7 +43,7 @@ func NewGraphDataForSymbolCategoryValueInnerWithDefaults() *GraphDataForSymbolCa
 
 // GetX returns the X field value if set, zero value otherwise.
 func (o *GraphDataForSymbolCategoryValueInner) GetX() string {
-	if o == nil || isNil(o.X) {
+	if o == nil || IsNil(o.X) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *GraphDataForSymbolCategoryValueInner) GetX() string {
 // GetXOk returns a tuple with the X field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GraphDataForSymbolCategoryValueInner) GetXOk() (*string, bool) {
-	if o == nil || isNil(o.X) {
+	if o == nil || IsNil(o.X) {
 		return nil, false
 	}
 	return o.X, true
@@ -61,7 +61,7 @@ func (o *GraphDataForSymbolCategoryValueInner) GetXOk() (*string, bool) {
 
 // HasX returns a boolean if a field has been set.
 func (o *GraphDataForSymbolCategoryValueInner) HasX() bool {
-	if o != nil && !isNil(o.X) {
+	if o != nil && !IsNil(o.X) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *GraphDataForSymbolCategoryValueInner) SetX(v string) {
 
 // GetY returns the Y field value if set, zero value otherwise.
 func (o *GraphDataForSymbolCategoryValueInner) GetY() float32 {
-	if o == nil || isNil(o.Y) {
+	if o == nil || IsNil(o.Y) {
 		var ret float32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *GraphDataForSymbolCategoryValueInner) GetY() float32 {
 // GetYOk returns a tuple with the Y field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GraphDataForSymbolCategoryValueInner) GetYOk() (*float32, bool) {
-	if o == nil || isNil(o.Y) {
+	if o == nil || IsNil(o.Y) {
 		return nil, false
 	}
 	return o.Y, true
@@ -93,7 +93,7 @@ func (o *GraphDataForSymbolCategoryValueInner) GetYOk() (*float32, bool) {
 
 // HasY returns a boolean if a field has been set.
 func (o *GraphDataForSymbolCategoryValueInner) HasY() bool {
-	if o != nil && !isNil(o.Y) {
+	if o != nil && !IsNil(o.Y) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o GraphDataForSymbolCategoryValueInner) MarshalJSON() ([]byte, error) {
 
 func (o GraphDataForSymbolCategoryValueInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.X) {
+	if !IsNil(o.X) {
 		toSerialize["x"] = o.X
 	}
-	if !isNil(o.Y) {
+	if !IsNil(o.Y) {
 		toSerialize["y"] = o.Y
 	}
 	return toSerialize, nil

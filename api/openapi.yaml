@@ -5,15 +5,16 @@ info:
   description: Agridence
   termsOfService: https://www.agridence.com/
   title: Agridence API
-  version: v1
+  version: v1.1
 servers:
-- url: "https://{environment}.heveaconnect.com/api/v1"
+- url: "https://{environment}.agridence.com/api/v1"
   variables:
     environment:
-      default: api-testing
+      default: api-platform-testing
       enum:
-      - api-testing
-      - api-staging
+      - api-platform-testing
+      - api-platform-staging
+      - api-platform
 paths:
   /auth/login/:
     post:

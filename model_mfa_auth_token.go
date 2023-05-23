@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -94,7 +94,7 @@ func (o *MFAAuthToken) SetPassword(v string) {
 
 // GetToken returns the Token field value if set, zero value otherwise.
 func (o *MFAAuthToken) GetToken() string {
-	if o == nil || isNil(o.Token) {
+	if o == nil || IsNil(o.Token) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *MFAAuthToken) GetToken() string {
 // GetTokenOk returns a tuple with the Token field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MFAAuthToken) GetTokenOk() (*string, bool) {
-	if o == nil || isNil(o.Token) {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
 	return o.Token, true
@@ -112,7 +112,7 @@ func (o *MFAAuthToken) GetTokenOk() (*string, bool) {
 
 // HasToken returns a boolean if a field has been set.
 func (o *MFAAuthToken) HasToken() bool {
-	if o != nil && !isNil(o.Token) {
+	if o != nil && !IsNil(o.Token) {
 		return true
 	}
 

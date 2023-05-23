@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -43,7 +43,7 @@ func NewOfferPanelFilterPaymentsWithDefaults() *OfferPanelFilterPayments {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterPayments) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *OfferPanelFilterPayments) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPayments) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -61,7 +61,7 @@ func (o *OfferPanelFilterPayments) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterPayments) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *OfferPanelFilterPayments) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterPayments) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *OfferPanelFilterPayments) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterPayments) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -93,7 +93,7 @@ func (o *OfferPanelFilterPayments) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterPayments) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 

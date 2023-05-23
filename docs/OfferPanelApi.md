@@ -1,6 +1,6 @@
 # \OfferPanelApi
 
-All URIs are relative to *https://api-testing.heveaconnect.com/api/v1*
+All URIs are relative to *https://api-platform-testing.agridence.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/Agridence/arp-sdk-go-v1"
 )
 
 func main() {

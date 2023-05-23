@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -42,7 +42,7 @@ func NewGraphDataForSymbolWithDefaults() *GraphDataForSymbol {
 
 // GetPrices returns the Prices field value if set, zero value otherwise.
 func (o *GraphDataForSymbol) GetPrices() map[string]map[string][]GraphDataForSymbolCategoryValueInner {
-	if o == nil || isNil(o.Prices) {
+	if o == nil || IsNil(o.Prices) {
 		var ret map[string]map[string][]GraphDataForSymbolCategoryValueInner
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GraphDataForSymbol) GetPrices() map[string]map[string][]GraphDataForSym
 // GetPricesOk returns a tuple with the Prices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GraphDataForSymbol) GetPricesOk() (*map[string]map[string][]GraphDataForSymbolCategoryValueInner, bool) {
-	if o == nil || isNil(o.Prices) {
+	if o == nil || IsNil(o.Prices) {
 		return nil, false
 	}
 	return o.Prices, true
@@ -60,7 +60,7 @@ func (o *GraphDataForSymbol) GetPricesOk() (*map[string]map[string][]GraphDataFo
 
 // HasPrices returns a boolean if a field has been set.
 func (o *GraphDataForSymbol) HasPrices() bool {
-	if o != nil && !isNil(o.Prices) {
+	if o != nil && !IsNil(o.Prices) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o GraphDataForSymbol) MarshalJSON() ([]byte, error) {
 
 func (o GraphDataForSymbol) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Prices) {
+	if !IsNil(o.Prices) {
 		toSerialize["prices"] = o.Prices
 	}
 	return toSerialize, nil

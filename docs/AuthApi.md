@@ -1,6 +1,6 @@
 # \AuthApi
 
-All URIs are relative to *https://api-testing.heveaconnect.com/api/v1*
+All URIs are relative to *https://api-platform-testing.agridence.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,7 +26,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/Agridence/arp-sdk-go-v1"
 )
 
 func main() {
@@ -92,14 +92,14 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/Agridence/arp-sdk-go-v1"
 )
 
 func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthApi.AuthLogoutCreate(context.Background()).Execute()
+    r, err := apiClient.AuthApi.AuthLogoutCreate(context.Background()).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthApi.AuthLogoutCreate``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

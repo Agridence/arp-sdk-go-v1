@@ -1,6 +1,6 @@
 # \UserInfoApi
 
-All URIs are relative to *https://api-testing.heveaconnect.com/api/v1*
+All URIs are relative to *https://api-platform-testing.agridence.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/Agridence/arp-sdk-go-v1"
 )
 
 func main() {
@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiUserInfoRequest struct via
 
 ### Authorization
 
-[ApiKeyAuth](../README.md#ApiKeyAuth), [UserAgent](../README.md#UserAgent)
+[UserAgent](../README.md#UserAgent), [ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

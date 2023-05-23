@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -44,7 +44,7 @@ func NewOfferPanelFilterDestinationsWithDefaults() *OfferPanelFilterDestinations
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterDestinations) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *OfferPanelFilterDestinations) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterDestinations) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -62,7 +62,7 @@ func (o *OfferPanelFilterDestinations) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterDestinations) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *OfferPanelFilterDestinations) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterDestinations) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *OfferPanelFilterDestinations) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterDestinations) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -94,7 +94,7 @@ func (o *OfferPanelFilterDestinations) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterDestinations) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *OfferPanelFilterDestinations) SetName(v string) {
 
 // GetDestinationCountry returns the DestinationCountry field value if set, zero value otherwise.
 func (o *OfferPanelFilterDestinations) GetDestinationCountry() string {
-	if o == nil || isNil(o.DestinationCountry) {
+	if o == nil || IsNil(o.DestinationCountry) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *OfferPanelFilterDestinations) GetDestinationCountry() string {
 // GetDestinationCountryOk returns a tuple with the DestinationCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterDestinations) GetDestinationCountryOk() (*string, bool) {
-	if o == nil || isNil(o.DestinationCountry) {
+	if o == nil || IsNil(o.DestinationCountry) {
 		return nil, false
 	}
 	return o.DestinationCountry, true
@@ -126,7 +126,7 @@ func (o *OfferPanelFilterDestinations) GetDestinationCountryOk() (*string, bool)
 
 // HasDestinationCountry returns a boolean if a field has been set.
 func (o *OfferPanelFilterDestinations) HasDestinationCountry() bool {
-	if o != nil && !isNil(o.DestinationCountry) {
+	if o != nil && !IsNil(o.DestinationCountry) {
 		return true
 	}
 

@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -63,7 +63,7 @@ func NewOfferPanelFilterWithDefaults() *OfferPanelFilter {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -73,7 +73,7 @@ func (o *OfferPanelFilter) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -81,7 +81,7 @@ func (o *OfferPanelFilter) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *OfferPanelFilter) SetType(v string) {
 
 // GetFactories returns the Factories field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetFactories() []OfferPanelFilterFactory {
-	if o == nil || isNil(o.Factories) {
+	if o == nil || IsNil(o.Factories) {
 		var ret []OfferPanelFilterFactory
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *OfferPanelFilter) GetFactories() []OfferPanelFilterFactory {
 // GetFactoriesOk returns a tuple with the Factories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetFactoriesOk() ([]OfferPanelFilterFactory, bool) {
-	if o == nil || isNil(o.Factories) {
+	if o == nil || IsNil(o.Factories) {
 		return nil, false
 	}
 	return o.Factories, true
@@ -161,7 +161,7 @@ func (o *OfferPanelFilter) GetFactoriesOk() ([]OfferPanelFilterFactory, bool) {
 
 // HasFactories returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasFactories() bool {
-	if o != nil && !isNil(o.Factories) {
+	if o != nil && !IsNil(o.Factories) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *OfferPanelFilter) SetFactories(v []OfferPanelFilterFactory) {
 
 // GetDefaultFactory returns the DefaultFactory field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultFactory() string {
-	if o == nil || isNil(o.DefaultFactory) {
+	if o == nil || IsNil(o.DefaultFactory) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *OfferPanelFilter) GetDefaultFactory() string {
 // GetDefaultFactoryOk returns a tuple with the DefaultFactory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultFactoryOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultFactory) {
+	if o == nil || IsNil(o.DefaultFactory) {
 		return nil, false
 	}
 	return o.DefaultFactory, true
@@ -193,7 +193,7 @@ func (o *OfferPanelFilter) GetDefaultFactoryOk() (*string, bool) {
 
 // HasDefaultFactory returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultFactory() bool {
-	if o != nil && !isNil(o.DefaultFactory) {
+	if o != nil && !IsNil(o.DefaultFactory) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *OfferPanelFilter) SetDefaultFactory(v string) {
 
 // GetCountries returns the Countries field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetCountries() []OfferPanelFilterCountry {
-	if o == nil || isNil(o.Countries) {
+	if o == nil || IsNil(o.Countries) {
 		var ret []OfferPanelFilterCountry
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *OfferPanelFilter) GetCountries() []OfferPanelFilterCountry {
 // GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetCountriesOk() ([]OfferPanelFilterCountry, bool) {
-	if o == nil || isNil(o.Countries) {
+	if o == nil || IsNil(o.Countries) {
 		return nil, false
 	}
 	return o.Countries, true
@@ -225,7 +225,7 @@ func (o *OfferPanelFilter) GetCountriesOk() ([]OfferPanelFilterCountry, bool) {
 
 // HasCountries returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasCountries() bool {
-	if o != nil && !isNil(o.Countries) {
+	if o != nil && !IsNil(o.Countries) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *OfferPanelFilter) SetCountries(v []OfferPanelFilterCountry) {
 
 // GetDefaultCountry returns the DefaultCountry field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultCountry() string {
-	if o == nil || isNil(o.DefaultCountry) {
+	if o == nil || IsNil(o.DefaultCountry) {
 		var ret string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *OfferPanelFilter) GetDefaultCountry() string {
 // GetDefaultCountryOk returns a tuple with the DefaultCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultCountryOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultCountry) {
+	if o == nil || IsNil(o.DefaultCountry) {
 		return nil, false
 	}
 	return o.DefaultCountry, true
@@ -257,7 +257,7 @@ func (o *OfferPanelFilter) GetDefaultCountryOk() (*string, bool) {
 
 // HasDefaultCountry returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultCountry() bool {
-	if o != nil && !isNil(o.DefaultCountry) {
+	if o != nil && !IsNil(o.DefaultCountry) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *OfferPanelFilter) SetDefaultCountry(v string) {
 
 // GetPorts returns the Ports field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetPorts() []OfferPanelFilterPort {
-	if o == nil || isNil(o.Ports) {
+	if o == nil || IsNil(o.Ports) {
 		var ret []OfferPanelFilterPort
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *OfferPanelFilter) GetPorts() []OfferPanelFilterPort {
 // GetPortsOk returns a tuple with the Ports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetPortsOk() ([]OfferPanelFilterPort, bool) {
-	if o == nil || isNil(o.Ports) {
+	if o == nil || IsNil(o.Ports) {
 		return nil, false
 	}
 	return o.Ports, true
@@ -289,7 +289,7 @@ func (o *OfferPanelFilter) GetPortsOk() ([]OfferPanelFilterPort, bool) {
 
 // HasPorts returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasPorts() bool {
-	if o != nil && !isNil(o.Ports) {
+	if o != nil && !IsNil(o.Ports) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *OfferPanelFilter) SetPorts(v []OfferPanelFilterPort) {
 
 // GetDefaultPort returns the DefaultPort field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultPort() string {
-	if o == nil || isNil(o.DefaultPort) {
+	if o == nil || IsNil(o.DefaultPort) {
 		var ret string
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *OfferPanelFilter) GetDefaultPort() string {
 // GetDefaultPortOk returns a tuple with the DefaultPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultPortOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultPort) {
+	if o == nil || IsNil(o.DefaultPort) {
 		return nil, false
 	}
 	return o.DefaultPort, true
@@ -321,7 +321,7 @@ func (o *OfferPanelFilter) GetDefaultPortOk() (*string, bool) {
 
 // HasDefaultPort returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultPort() bool {
-	if o != nil && !isNil(o.DefaultPort) {
+	if o != nil && !IsNil(o.DefaultPort) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *OfferPanelFilter) SetDefaultPort(v string) {
 
 // GetGrades returns the Grades field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetGrades() []OfferPanelFilterGrade {
-	if o == nil || isNil(o.Grades) {
+	if o == nil || IsNil(o.Grades) {
 		var ret []OfferPanelFilterGrade
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *OfferPanelFilter) GetGrades() []OfferPanelFilterGrade {
 // GetGradesOk returns a tuple with the Grades field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetGradesOk() ([]OfferPanelFilterGrade, bool) {
-	if o == nil || isNil(o.Grades) {
+	if o == nil || IsNil(o.Grades) {
 		return nil, false
 	}
 	return o.Grades, true
@@ -353,7 +353,7 @@ func (o *OfferPanelFilter) GetGradesOk() ([]OfferPanelFilterGrade, bool) {
 
 // HasGrades returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasGrades() bool {
-	if o != nil && !isNil(o.Grades) {
+	if o != nil && !IsNil(o.Grades) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *OfferPanelFilter) SetGrades(v []OfferPanelFilterGrade) {
 
 // GetDefaultGrade returns the DefaultGrade field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultGrade() string {
-	if o == nil || isNil(o.DefaultGrade) {
+	if o == nil || IsNil(o.DefaultGrade) {
 		var ret string
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *OfferPanelFilter) GetDefaultGrade() string {
 // GetDefaultGradeOk returns a tuple with the DefaultGrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultGradeOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultGrade) {
+	if o == nil || IsNil(o.DefaultGrade) {
 		return nil, false
 	}
 	return o.DefaultGrade, true
@@ -385,7 +385,7 @@ func (o *OfferPanelFilter) GetDefaultGradeOk() (*string, bool) {
 
 // HasDefaultGrade returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultGrade() bool {
-	if o != nil && !isNil(o.DefaultGrade) {
+	if o != nil && !IsNil(o.DefaultGrade) {
 		return true
 	}
 
@@ -399,7 +399,7 @@ func (o *OfferPanelFilter) SetDefaultGrade(v string) {
 
 // GetPackings returns the Packings field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetPackings() []OfferPanelFilterPackings {
-	if o == nil || isNil(o.Packings) {
+	if o == nil || IsNil(o.Packings) {
 		var ret []OfferPanelFilterPackings
 		return ret
 	}
@@ -409,7 +409,7 @@ func (o *OfferPanelFilter) GetPackings() []OfferPanelFilterPackings {
 // GetPackingsOk returns a tuple with the Packings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetPackingsOk() ([]OfferPanelFilterPackings, bool) {
-	if o == nil || isNil(o.Packings) {
+	if o == nil || IsNil(o.Packings) {
 		return nil, false
 	}
 	return o.Packings, true
@@ -417,7 +417,7 @@ func (o *OfferPanelFilter) GetPackingsOk() ([]OfferPanelFilterPackings, bool) {
 
 // HasPackings returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasPackings() bool {
-	if o != nil && !isNil(o.Packings) {
+	if o != nil && !IsNil(o.Packings) {
 		return true
 	}
 
@@ -431,7 +431,7 @@ func (o *OfferPanelFilter) SetPackings(v []OfferPanelFilterPackings) {
 
 // GetDefaultPacking returns the DefaultPacking field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultPacking() string {
-	if o == nil || isNil(o.DefaultPacking) {
+	if o == nil || IsNil(o.DefaultPacking) {
 		var ret string
 		return ret
 	}
@@ -441,7 +441,7 @@ func (o *OfferPanelFilter) GetDefaultPacking() string {
 // GetDefaultPackingOk returns a tuple with the DefaultPacking field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultPackingOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultPacking) {
+	if o == nil || IsNil(o.DefaultPacking) {
 		return nil, false
 	}
 	return o.DefaultPacking, true
@@ -449,7 +449,7 @@ func (o *OfferPanelFilter) GetDefaultPackingOk() (*string, bool) {
 
 // HasDefaultPacking returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultPacking() bool {
-	if o != nil && !isNil(o.DefaultPacking) {
+	if o != nil && !IsNil(o.DefaultPacking) {
 		return true
 	}
 
@@ -463,7 +463,7 @@ func (o *OfferPanelFilter) SetDefaultPacking(v string) {
 
 // GetPayments returns the Payments field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetPayments() []OfferPanelFilterPayments {
-	if o == nil || isNil(o.Payments) {
+	if o == nil || IsNil(o.Payments) {
 		var ret []OfferPanelFilterPayments
 		return ret
 	}
@@ -473,7 +473,7 @@ func (o *OfferPanelFilter) GetPayments() []OfferPanelFilterPayments {
 // GetPaymentsOk returns a tuple with the Payments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetPaymentsOk() ([]OfferPanelFilterPayments, bool) {
-	if o == nil || isNil(o.Payments) {
+	if o == nil || IsNil(o.Payments) {
 		return nil, false
 	}
 	return o.Payments, true
@@ -481,7 +481,7 @@ func (o *OfferPanelFilter) GetPaymentsOk() ([]OfferPanelFilterPayments, bool) {
 
 // HasPayments returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasPayments() bool {
-	if o != nil && !isNil(o.Payments) {
+	if o != nil && !IsNil(o.Payments) {
 		return true
 	}
 
@@ -495,7 +495,7 @@ func (o *OfferPanelFilter) SetPayments(v []OfferPanelFilterPayments) {
 
 // GetDefaultPayment returns the DefaultPayment field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultPayment() string {
-	if o == nil || isNil(o.DefaultPayment) {
+	if o == nil || IsNil(o.DefaultPayment) {
 		var ret string
 		return ret
 	}
@@ -505,7 +505,7 @@ func (o *OfferPanelFilter) GetDefaultPayment() string {
 // GetDefaultPaymentOk returns a tuple with the DefaultPayment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultPaymentOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultPayment) {
+	if o == nil || IsNil(o.DefaultPayment) {
 		return nil, false
 	}
 	return o.DefaultPayment, true
@@ -513,7 +513,7 @@ func (o *OfferPanelFilter) GetDefaultPaymentOk() (*string, bool) {
 
 // HasDefaultPayment returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultPayment() bool {
-	if o != nil && !isNil(o.DefaultPayment) {
+	if o != nil && !IsNil(o.DefaultPayment) {
 		return true
 	}
 
@@ -527,7 +527,7 @@ func (o *OfferPanelFilter) SetDefaultPayment(v string) {
 
 // GetShippings returns the Shippings field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetShippings() []OfferPanelFilterShippings {
-	if o == nil || isNil(o.Shippings) {
+	if o == nil || IsNil(o.Shippings) {
 		var ret []OfferPanelFilterShippings
 		return ret
 	}
@@ -537,7 +537,7 @@ func (o *OfferPanelFilter) GetShippings() []OfferPanelFilterShippings {
 // GetShippingsOk returns a tuple with the Shippings field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetShippingsOk() ([]OfferPanelFilterShippings, bool) {
-	if o == nil || isNil(o.Shippings) {
+	if o == nil || IsNil(o.Shippings) {
 		return nil, false
 	}
 	return o.Shippings, true
@@ -545,7 +545,7 @@ func (o *OfferPanelFilter) GetShippingsOk() ([]OfferPanelFilterShippings, bool) 
 
 // HasShippings returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasShippings() bool {
-	if o != nil && !isNil(o.Shippings) {
+	if o != nil && !IsNil(o.Shippings) {
 		return true
 	}
 
@@ -559,7 +559,7 @@ func (o *OfferPanelFilter) SetShippings(v []OfferPanelFilterShippings) {
 
 // GetDefaultShipping returns the DefaultShipping field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultShipping() string {
-	if o == nil || isNil(o.DefaultShipping) {
+	if o == nil || IsNil(o.DefaultShipping) {
 		var ret string
 		return ret
 	}
@@ -569,7 +569,7 @@ func (o *OfferPanelFilter) GetDefaultShipping() string {
 // GetDefaultShippingOk returns a tuple with the DefaultShipping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultShippingOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultShipping) {
+	if o == nil || IsNil(o.DefaultShipping) {
 		return nil, false
 	}
 	return o.DefaultShipping, true
@@ -577,7 +577,7 @@ func (o *OfferPanelFilter) GetDefaultShippingOk() (*string, bool) {
 
 // HasDefaultShipping returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultShipping() bool {
-	if o != nil && !isNil(o.DefaultShipping) {
+	if o != nil && !IsNil(o.DefaultShipping) {
 		return true
 	}
 
@@ -591,7 +591,7 @@ func (o *OfferPanelFilter) SetDefaultShipping(v string) {
 
 // GetDestinations returns the Destinations field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDestinations() []OfferPanelFilterDestinations {
-	if o == nil || isNil(o.Destinations) {
+	if o == nil || IsNil(o.Destinations) {
 		var ret []OfferPanelFilterDestinations
 		return ret
 	}
@@ -601,7 +601,7 @@ func (o *OfferPanelFilter) GetDestinations() []OfferPanelFilterDestinations {
 // GetDestinationsOk returns a tuple with the Destinations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDestinationsOk() ([]OfferPanelFilterDestinations, bool) {
-	if o == nil || isNil(o.Destinations) {
+	if o == nil || IsNil(o.Destinations) {
 		return nil, false
 	}
 	return o.Destinations, true
@@ -609,7 +609,7 @@ func (o *OfferPanelFilter) GetDestinationsOk() ([]OfferPanelFilterDestinations, 
 
 // HasDestinations returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDestinations() bool {
-	if o != nil && !isNil(o.Destinations) {
+	if o != nil && !IsNil(o.Destinations) {
 		return true
 	}
 
@@ -623,7 +623,7 @@ func (o *OfferPanelFilter) SetDestinations(v []OfferPanelFilterDestinations) {
 
 // GetDefaultDestination returns the DefaultDestination field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetDefaultDestination() string {
-	if o == nil || isNil(o.DefaultDestination) {
+	if o == nil || IsNil(o.DefaultDestination) {
 		var ret string
 		return ret
 	}
@@ -633,7 +633,7 @@ func (o *OfferPanelFilter) GetDefaultDestination() string {
 // GetDefaultDestinationOk returns a tuple with the DefaultDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetDefaultDestinationOk() (*string, bool) {
-	if o == nil || isNil(o.DefaultDestination) {
+	if o == nil || IsNil(o.DefaultDestination) {
 		return nil, false
 	}
 	return o.DefaultDestination, true
@@ -641,7 +641,7 @@ func (o *OfferPanelFilter) GetDefaultDestinationOk() (*string, bool) {
 
 // HasDefaultDestination returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasDefaultDestination() bool {
-	if o != nil && !isNil(o.DefaultDestination) {
+	if o != nil && !IsNil(o.DefaultDestination) {
 		return true
 	}
 
@@ -655,7 +655,7 @@ func (o *OfferPanelFilter) SetDefaultDestination(v string) {
 
 // GetMonths returns the Months field value if set, zero value otherwise.
 func (o *OfferPanelFilter) GetMonths() []string {
-	if o == nil || isNil(o.Months) {
+	if o == nil || IsNil(o.Months) {
 		var ret []string
 		return ret
 	}
@@ -665,7 +665,7 @@ func (o *OfferPanelFilter) GetMonths() []string {
 // GetMonthsOk returns a tuple with the Months field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilter) GetMonthsOk() ([]string, bool) {
-	if o == nil || isNil(o.Months) {
+	if o == nil || IsNil(o.Months) {
 		return nil, false
 	}
 	return o.Months, true
@@ -673,7 +673,7 @@ func (o *OfferPanelFilter) GetMonthsOk() ([]string, bool) {
 
 // HasMonths returns a boolean if a field has been set.
 func (o *OfferPanelFilter) HasMonths() bool {
-	if o != nil && !isNil(o.Months) {
+	if o != nil && !IsNil(o.Months) {
 		return true
 	}
 

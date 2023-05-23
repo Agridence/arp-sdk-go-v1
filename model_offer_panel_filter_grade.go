@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -45,7 +45,7 @@ func NewOfferPanelFilterGradeWithDefaults() *OfferPanelFilterGrade {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterGrade) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *OfferPanelFilterGrade) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterGrade) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -63,7 +63,7 @@ func (o *OfferPanelFilterGrade) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterGrade) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *OfferPanelFilterGrade) SetId(v int32) {
 
 // GetGradeCode returns the GradeCode field value if set, zero value otherwise.
 func (o *OfferPanelFilterGrade) GetGradeCode() string {
-	if o == nil || isNil(o.GradeCode) {
+	if o == nil || IsNil(o.GradeCode) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *OfferPanelFilterGrade) GetGradeCode() string {
 // GetGradeCodeOk returns a tuple with the GradeCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterGrade) GetGradeCodeOk() (*string, bool) {
-	if o == nil || isNil(o.GradeCode) {
+	if o == nil || IsNil(o.GradeCode) {
 		return nil, false
 	}
 	return o.GradeCode, true
@@ -95,7 +95,7 @@ func (o *OfferPanelFilterGrade) GetGradeCodeOk() (*string, bool) {
 
 // HasGradeCode returns a boolean if a field has been set.
 func (o *OfferPanelFilterGrade) HasGradeCode() bool {
-	if o != nil && !isNil(o.GradeCode) {
+	if o != nil && !IsNil(o.GradeCode) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *OfferPanelFilterGrade) SetGradeCode(v string) {
 
 // GetCountry returns the Country field value if set, zero value otherwise.
 func (o *OfferPanelFilterGrade) GetCountry() string {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *OfferPanelFilterGrade) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterGrade) GetCountryOk() (*string, bool) {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
 	return o.Country, true
@@ -127,7 +127,7 @@ func (o *OfferPanelFilterGrade) GetCountryOk() (*string, bool) {
 
 // HasCountry returns a boolean if a field has been set.
 func (o *OfferPanelFilterGrade) HasCountry() bool {
-	if o != nil && !isNil(o.Country) {
+	if o != nil && !IsNil(o.Country) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *OfferPanelFilterGrade) SetCountry(v string) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterGrade) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *OfferPanelFilterGrade) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterGrade) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -159,7 +159,7 @@ func (o *OfferPanelFilterGrade) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterGrade) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 

@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -94,15 +94,16 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "https://{environment}.heveaconnect.com/api/v1",
+				URL: "https://{environment}.agridence.com/api/v1",
 				Description: "No description provided",
 				Variables: map[string]ServerVariable{
 					"environment": ServerVariable{
 						Description: "No description provided",
-						DefaultValue: "api-testing",
+						DefaultValue: "api-platform-testing",
 						EnumValues: []string{
-							"api-testing",
-							"api-staging",
+							"api-platform-testing",
+							"api-platform-staging",
+							"api-platform",
 						},
 					},
 				},

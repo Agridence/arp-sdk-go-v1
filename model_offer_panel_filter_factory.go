@@ -3,7 +3,7 @@ Agridence API
 
 Agridence
 
-API version: v1
+API version: v1.1
 Contact: it@agridence.com
 */
 
@@ -45,7 +45,7 @@ func NewOfferPanelFilterFactoryWithDefaults() *OfferPanelFilterFactory {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *OfferPanelFilterFactory) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *OfferPanelFilterFactory) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterFactory) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -63,7 +63,7 @@ func (o *OfferPanelFilterFactory) GetIdOk() (*int32, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *OfferPanelFilterFactory) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *OfferPanelFilterFactory) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *OfferPanelFilterFactory) GetName() string {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *OfferPanelFilterFactory) GetName() string {
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterFactory) GetNameOk() (*string, bool) {
-	if o == nil || isNil(o.Name) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return o.Name, true
@@ -95,7 +95,7 @@ func (o *OfferPanelFilterFactory) GetNameOk() (*string, bool) {
 
 // HasName returns a boolean if a field has been set.
 func (o *OfferPanelFilterFactory) HasName() bool {
-	if o != nil && !isNil(o.Name) {
+	if o != nil && !IsNil(o.Name) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *OfferPanelFilterFactory) SetName(v string) {
 
 // GetFactoryCode returns the FactoryCode field value if set, zero value otherwise.
 func (o *OfferPanelFilterFactory) GetFactoryCode() string {
-	if o == nil || isNil(o.FactoryCode) {
+	if o == nil || IsNil(o.FactoryCode) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *OfferPanelFilterFactory) GetFactoryCode() string {
 // GetFactoryCodeOk returns a tuple with the FactoryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterFactory) GetFactoryCodeOk() (*string, bool) {
-	if o == nil || isNil(o.FactoryCode) {
+	if o == nil || IsNil(o.FactoryCode) {
 		return nil, false
 	}
 	return o.FactoryCode, true
@@ -127,7 +127,7 @@ func (o *OfferPanelFilterFactory) GetFactoryCodeOk() (*string, bool) {
 
 // HasFactoryCode returns a boolean if a field has been set.
 func (o *OfferPanelFilterFactory) HasFactoryCode() bool {
-	if o != nil && !isNil(o.FactoryCode) {
+	if o != nil && !IsNil(o.FactoryCode) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *OfferPanelFilterFactory) SetFactoryCode(v string) {
 
 // GetCountry returns the Country field value if set, zero value otherwise.
 func (o *OfferPanelFilterFactory) GetCountry() string {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *OfferPanelFilterFactory) GetCountry() string {
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OfferPanelFilterFactory) GetCountryOk() (*string, bool) {
-	if o == nil || isNil(o.Country) {
+	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
 	return o.Country, true
@@ -159,7 +159,7 @@ func (o *OfferPanelFilterFactory) GetCountryOk() (*string, bool) {
 
 // HasCountry returns a boolean if a field has been set.
 func (o *OfferPanelFilterFactory) HasCountry() bool {
-	if o != nil && !isNil(o.Country) {
+	if o != nil && !IsNil(o.Country) {
 		return true
 	}
 
