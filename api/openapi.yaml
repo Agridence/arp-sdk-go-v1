@@ -107,6 +107,7 @@ paths:
       security:
       - ApiKeyAuth: []
         UserAgent: []
+        ClientType: []
       tags:
       - user-info
   /dashboard/graph-without-sicom:
@@ -123,6 +124,7 @@ paths:
       security:
       - ApiKeyAuth: []
         UserAgent: []
+        ClientType: []
       tags:
       - graph-data
 components:

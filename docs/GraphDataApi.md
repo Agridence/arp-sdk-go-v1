@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiGraphDataRequest struct vi
 
 ### Authorization
 
-[UserAgent](../README.md#UserAgent), [ApiKeyAuth](../README.md#ApiKeyAuth)
+[ClientType](../README.md#ClientType), [UserAgent](../README.md#UserAgent), [ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
