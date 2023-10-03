@@ -18,7 +18,7 @@ func main() {
     apiClient := openapiclient.NewAPIClient(configuration)
     // fmt.Println(configuration.Host)
     ctx = context.WithValue(ctx, openapiclient.ContextAPIKeys, map[string]openapiclient.APIKey{
-	"ApiKeyAuth": openapiclient.APIKey{Key: "96a68b0635ee03a22e6399ce188c5da869bcdea1", Prefix: "Token",},
+	"ApiKeyAuth": openapiclient.APIKey{Key: "624d348c84f91ce7fd5b500ca623b29378bf168e", Prefix: "Token",},
 	"UserAgent": openapiclient.APIKey{Key: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15", Prefix: "",},
 	})
     // start verify context
@@ -39,5 +39,5 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GraphDataApi.GraphData`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    fmt.Fprintf(os.Stdout, "Response from `GraphDataApi.GraphData`: %v\n", (*resp.Prices)["2023-03-01"]["SIR20"])
+    fmt.Fprintf(os.Stdout, "Response from `GraphDataApi.GraphData`: %v\n", (*resp.Prices)["2023-10-01"]["SIR20"])
 }

@@ -245,6 +245,11 @@
         "type": "apiKey",
         "in": "header",
         "name": "Authorization"
+      },
+      "ClientType": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Client-Type"
       }
     },
     "schemas": {

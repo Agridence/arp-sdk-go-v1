@@ -735,3 +735,7 @@ components:
       in: header
       name: Authorization
       type: apiKey
+    ClientType:
+      in: header
+      name: X-Client-Type
+      type: apiKey

@@ -125,6 +125,15 @@ Note, each API key must be added to a map of `map[string]APIKey` where the key i
 Note, each API key must be added to a map of `map[string]APIKey` where the key is: Authorization and passed in as the auth context for each request.
 
 
+### ClientType
+
+- **Type**: API key
+- **API key parameter name**: X-Client-Type
+- **Location**: HTTP header
+
+Note, each API key must be added to a map of `map[string]APIKey` where the key is: X-Client-Type and passed in as the auth context for each request.
+
+
 ## Documentation for Utility Methods
 
 Due to the fact that model structure members are all pointers, this package contains
